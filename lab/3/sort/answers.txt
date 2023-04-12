@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: because it's faster than sort 3 for sorted 50,000
+
+sort2 uses: merge sort
+
+How do you know?: because its by far the fastest on reversed 50,000
+
+sort3 uses: selection sort
+
+How do you know?: because it is slowest or equal slowest at the assorted 50,000 lists

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Exercise Program</title>
+	<!-- CSS Import -->
+	<link rel="stylesheet" href="main.css" />
+	<!-- End of CSS Import -->
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+	<!-- End of Fonts -->
+</head>
+<body>
+    <!-- App Wrapper -->
+	<main class="app">
+		<!-- Greeting -->
+		<section class="greeting">
+			<h2 class="title">
+				What's up, <input type="text" id="name" placeholder="Name here" />
+			</h2>
+		</section>
+		<!-- End of Greeting -->
+
+        <!-- New Todo -->
+        <section class="create-program">
+            <h3>Create a program</h3>
+            <form id="new-program-form">
+                <h4>What ya hittin bro</h4>
+                <input type="text" name="exercise" id="exercise" placeholder="Exercise" autocomplete="off">
+                <input type="text" name="weight" id="weight" placeholder="Weight">
+                <input type="text" name="sets" id="sets" placeholder="Sets">
+                <input type="text" name="reps" id="reps" placeholder="Reps">
+                
+
+
+                <h4>Pick a day</h4>
+                <div class="options">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="category"
+                            id="category1"
+                            value="1">
+                        <span class="bubble day1"></span>
+                        <div>Day1</div>
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="category"
+                            id="category2"
+                            value="2">
+                        <span class="bubble day2"></span>
+                        <div>Day2</div>
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="category"
+                            id="category3"
+                            value="3">
+                        <span class="bubble day3"></span>
+                        <div>Day3</div>
+                    </label>
+                </div>
+
+                <input type="submit" value="Add exercise">
+            </form>
+        </section>
+
+        <section class="program-list">
+            <h3>Exercise Program</h3>
+            <div class="list" id="program-list"></div>
+        </section>
+
+        <section class="reset">
+            <h3>Uncheck all</h3>
+            <div>
+                <button type="button" id="reset-button">Reset</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

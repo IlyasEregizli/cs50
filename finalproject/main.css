@@ -1,0 +1,264 @@
+:root {
+    --primary: #EA40A4;
+    --day1: #3A82EE;
+    --day2: #EA40A4;
+    --day3: #32CD32;
+    --light: #EEE;
+    --grey: #888;
+    --dark: #313154;
+    --danger: #FF5B57;
+    --button: #ffa500;
+
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    --day1-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+    --day2-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+    --day3-glow: 0px 0px 4px rgba(50, 205, 50, 0.75);
+    --button-glow: 0px 0px 4px rgba(255, 165, 0 0.75);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', sans-serif;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+body {
+    background: var(--light);
+    color: var(--dark);
+}
+
+section{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+h3 {
+    color: var(--dark);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    color: var(--grey);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.greeting .title {
+    display: flex;
+}
+
+.greeting .title input {
+    margin-left: 0.5rem;
+    flex: 1 1 0%;
+    min-width: 0;
+}
+
+.greeting .title,
+.greeting .title input {
+    color: var(--dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.create-program input[type="text"] {
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: var(--dark);
+    background-color: #FFF;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.create-program .options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.create-program .options label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #FFF;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+}
+
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--day1);
+    box-shadow: var(--day1-glow);
+}
+
+.bubble.day2 {
+    border-color: var(--day2);
+    box-shadow: var(--day2-glow);
+}
+
+.bubble.day3 {
+    border-color: var(--day3);
+    box-shadow: var(--day3-glow);
+}
+
+.bubble::after {
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: var(--day1);
+    box-shadow: var(--day1-glow);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+
+}
+
+.bubble.day2::after {
+    background-color: var(--day2);
+    box-shadow: var(--day2-glow);
+}
+
+.bubble.day3::after {
+    background-color: var(--day3);
+    box-shadow: var(--day3-glow);
+}
+
+input:checked ~ .bubble::after {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+.create-program .options label div {
+    color: var(--dark);
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.create-program input[type="submit"] {
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: var(--dark);
+    background-color: var(--button);
+    border-radius: 0.5rem;
+    box-shadow: var(--button-glow);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+}
+
+.create-program input[type="submit"]:hover {
+    opacity: 0.75;
+}
+
+.program-list .list {
+    margin: 1rem 0;
+}
+
+.program-list .exercise-item {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+    
+}
+
+.exercise-item label {
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.exercise-item .exercise-content {
+    flex: 1;
+
+}
+
+.exercise-item .exercise-content input {
+    width: 600px;
+    color: var(--dark);
+    font-size: 1.125rem;
+}
+
+.exercise-item .actions {
+    display: flex;
+    align-items: center;
+}
+
+.exercise-item .actions button {
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    width: 60px;
+}
+
+.exercise-item .actions button:hover {
+	opacity: 0.75;
+}
+
+.exercise-item .actions .delete {
+	background-color: var(--danger);
+}
+
+.exercise-item.done .exercise-content input {
+	text-decoration: line-through;
+	color: var(--grey);
+}
+
+.reset button {
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: var(--dark);
+    background-color: var(--button);
+    border-radius: 0.5rem;
+    box-shadow: var(--button-glow);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.reset button:hover {
+	opacity: 0.75;
+}
